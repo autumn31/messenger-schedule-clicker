@@ -1,8 +1,10 @@
 // aria-label="送 1 個讚"
 // aria-label="按 Enter 即可傳送"
 
+let click_lable = '[aria-label="按 Enter 即可傳送"]';
+
 function clickSend() {
-  let elems = document.querySelectorAll('[aria-label="按 Enter 即可傳送"]');
+  let elems = document.querySelectorAll(click_lable);
   console.log(elems);
   elems[0].click();
 }
@@ -24,7 +26,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     sendResponse({ result: "ok" });
     let timeStr = message.data.appt;
     if (!timeStr) {
-      alert("appt can't be empty");
+      alert("scheduled time can't be empty");
       return;
     }
     let wait = getWaitTime(timeStr);

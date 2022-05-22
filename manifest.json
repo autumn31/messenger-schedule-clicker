@@ -1,11 +1,10 @@
 {
-  "name": "doc filler - chang gung",
+  "name": "messenger-click-scheduler",
   "version": "1.0",
-  "description": "Build an Extension!",
+  "description": "schedule click button on messenger",
   "permissions": [
     "activeTab",
-    "declarativeContent",
-    "storage"
+    "declarativeContent"
   ],
   "action": {
     "default_popup": "popup.html",
@@ -15,6 +14,9 @@
       "48": "/images/mess64.png",
       "128": "/images/mess128.png"
     }
+  },
+  "background": {
+    "service_worker": "background.js"
   },
   "icons": {
     "16": "/images/mess16.png",
