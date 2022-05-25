@@ -2,6 +2,8 @@
 // aria-label="按 Enter 即可傳送"
 
 let click_lable = '[aria-label="按 Enter 即可傳送"]';
+// estimate delays cause by transmission, you can test and change this value
+let delay_time = 200;
 
 function clickSend() {
   let elems = document.querySelectorAll(click_lable);
@@ -30,6 +32,6 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       return;
     }
     let wait = getWaitTime(timeStr);
-    setTimeout(clickSend, wait);
+    setTimeout(clickSend, wait - delay);
   }
 });
