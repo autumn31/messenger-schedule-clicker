@@ -32,6 +32,6 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       return;
     }
     let wait = getWaitTime(timeStr);
-    setTimeout(clickSend, wait - delay);
+    setTimeout(clickSend, wait - delay_time);
   }
 });
